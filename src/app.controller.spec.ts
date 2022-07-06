@@ -16,7 +16,7 @@ describe('AppController', () => {
 
   describe('root', () => {
     it('should return data', () => {
-      expect(appController.getData()).toBeTruthy();
+      expect(appController.getApps()).toBeTruthy();
     });
   });
 });

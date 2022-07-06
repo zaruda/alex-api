@@ -7,6 +7,7 @@ type Subscription = {
 };
 
 export interface IAppSettings {
+  id: string;
   benefits: string[];
   subscriptions: Subscription[];
 }
