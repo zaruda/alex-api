@@ -40,8 +40,6 @@ export class AppService {
   async updateAppById(id: string, data: IAppSettings): Promise<IAppSettings> {
     const appIndex = this.repository.findIndex((r) => r.id === id);
 
-    console.log(appIndex);
-
     if (appIndex === -1) {
       throw new Error('Application not found');
     }
