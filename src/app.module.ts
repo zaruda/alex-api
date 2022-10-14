@@ -19,7 +19,9 @@ import { ApplicationsModule, SubscriptionsModule } from './modules';
         database: configService.dbName,
         autoLoadEntities: true,
         synchronize: process.env.NODE_ENV === 'development',
-        ssl: true,
+        ssl: {
+          rejectUnauthorized: false,
+        },
       }),
       inject: [AppConfigService],
     }),
