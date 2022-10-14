@@ -3,7 +3,7 @@ import { Application } from './application.entity';
 
 @Entity()
 export class Subscription extends BaseEntity {
-  @PrimaryColumn()
+  @PrimaryColumn({ unique: true })
   id: string;
 
   @Column()

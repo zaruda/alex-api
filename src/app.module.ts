@@ -19,6 +19,8 @@ import { ApplicationsModule, SubscriptionsModule } from './modules';
         database: configService.dbName,
         autoLoadEntities: true,
         synchronize: process.env.NODE_ENV === 'development',
+        migrationsTableName: 'migrations',
+        migrations: ['dist/src/migrations/*.ts'],
         ssl: {
           rejectUnauthorized: false,
         },

@@ -3,11 +3,14 @@ import { Subscription } from './subscription.entity';
 
 @Entity()
 export class Application extends BaseEntity {
-  @PrimaryColumn()
+  @PrimaryColumn({ unique: true })
   id: string;
 
   @Column('simple-array')
   public benefits: string[];
+
+  @Column('json', { nullable: true, default: null })
+  public additionalData: string;
 
   @OneToMany(() => Subscription, (subscription) => subscription.application, {
     eager: true,
