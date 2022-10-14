@@ -6,8 +6,8 @@ export class Application extends BaseEntity {
   @PrimaryColumn({ unique: true })
   id: string;
 
-  @Column('simple-array')
-  public benefits: string[];
+  @Column('simple-array', { nullable: true, default: [] })
+  public benefits: string[] | null;
 
   @Column('json', { nullable: true, default: null })
   public additionalData: string;

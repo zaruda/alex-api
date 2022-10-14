@@ -9,14 +9,14 @@ export class Subscription extends BaseEntity {
   @Column()
   name: string;
 
-  @Column()
-  benefits: string;
+  @Column({ nullable: true, default: null })
+  benefits: string | null;
 
   @Column()
   price: string;
 
-  @Column()
-  period: string;
+  @Column({ nullable: true, default: null })
+  period: string | null;
 
   @ManyToOne(() => Application, (application) => application.subscriptions, {
     orphanedRowAction: 'delete',
