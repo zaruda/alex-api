@@ -1,12 +1,26 @@
-import { Controller, Get } from '@nestjs/common';
+import { Body, Controller, Get, Param, Put } from '@nestjs/common';
+import { UpdateSubscriptionDto } from './dto/update-subscription.dto';
 import { SubscriptionsService } from './subscriptions.service';
 
-@Controller('/subscriptions/all')
+@Controller('/subscriptions')
 export class SubscriptionsController {
-  constructor(private readonly applicationsService: SubscriptionsService) {}
+  constructor(private readonly subscriptionsService: SubscriptionsService) {}
 
-  @Get()
+  @Get('all')
   findAll() {
-    return this.applicationsService.findAll();
+    return this.subscriptionsService.findAll();
+  }
+
+  @Get(':id')
+  findById(@Param('id') id: string) {
+    return this.subscriptionsService.findOne(id);
+  }
+
+  @Put(':id')
+  update(
+    @Param('id') id: string,
+    @Body() updateSubscriptionDto: UpdateSubscriptionDto,
+  ) {
+    return this.subscriptionsService.update(id, updateSubscriptionDto);
   }
 }

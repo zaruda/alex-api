@@ -3,10 +3,9 @@ import { ApplicationsService } from './application.service';
 import { ApplicationsController } from './application.controller';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { Application } from './entities/application.entity';
-import { Subscription } from './entities/subscription.entity';
 
 @Module({
-  imports: [TypeOrmModule.forFeature([Application, Subscription])],
+  imports: [TypeOrmModule.forFeature([Application])],
   controllers: [ApplicationsController],
   providers: [ApplicationsService],
 })

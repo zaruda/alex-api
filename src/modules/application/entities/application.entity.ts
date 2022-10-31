@@ -1,5 +1,5 @@
 import { BaseEntity, Column, Entity, OneToMany, PrimaryColumn } from 'typeorm';
-import { Subscription } from './subscription.entity';
+import { Subscription } from '../../subscriptions/entities/subscription.entity';
 
 @Entity()
 export class Application extends BaseEntity {

@@ -1,5 +1,5 @@
 import { BaseEntity, Column, Entity, PrimaryColumn, ManyToOne } from 'typeorm';
-import { Application } from './application.entity';
+import { Application } from '../../application/entities/application.entity';
 
 @Entity()
 export class Subscription extends BaseEntity {
